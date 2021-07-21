@@ -1,7 +1,6 @@
 from base64 import b64decode
 from urllib.request import urlopen,Request
-from sys import argv
-import time,pyperclip
+import pyperclip
 
 
 def Algorithm(data):
