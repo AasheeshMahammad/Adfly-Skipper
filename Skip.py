@@ -37,10 +37,11 @@ def Algorithm(data):
     key = b64decode(key.encode("utf-8"))
     return key.decode('utf-8')
 
-def Decrypt(url=0):
-    if url==0:
-        return
-    req = Request(url, headers={'User-Agent': 'Chrome/91.0.4472.77'})  
+def Decrypt(url):
+    try:
+        req = Request(url, headers={'User-Agent': 'Chrome/91.0.4472.77'})
+    except:
+        print("Invalid Url")
     data_ = urlopen(req)
     data=data_.read()
     ysmm = data.split(b"ysmm = '")[1].split(b"';")[0]
@@ -61,6 +62,7 @@ def Decrypt(url=0):
     
 if __name__=="__main__":    
     link=input("Enter Link :")
-    decrypted_link=Decrypt(link)
+    if link!="":
+        decrypted_link=Decrypt(link)
     pyperclip.copy(decrypted_link)
     print("Destination Url :",decrypted_link)
