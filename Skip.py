@@ -64,5 +64,5 @@ if __name__=="__main__":
     link=input("Enter Link :")
     if link!="":
         decrypted_link=Decrypt(link)
-    pyperclip.copy(decrypted_link)
-    print("Destination Url :",decrypted_link)
+        pyperclip.copy(decrypted_link)
+        print("Destination Url :",decrypted_link)
