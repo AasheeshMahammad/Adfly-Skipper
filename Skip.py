@@ -42,6 +42,7 @@ def Decrypt(url):
         req = Request(url, headers={'User-Agent': 'Chrome/91.0.4472.77'})
     except:
         print("Invalid Url")
+        return None
     data_ = urlopen(req)
     data=data_.read()
     ysmm = data.split(b"ysmm = '")[1].split(b"';")[0]
@@ -64,5 +65,6 @@ if __name__=="__main__":
     link=input("Enter Link :")
     if link!="":
         decrypted_link=Decrypt(link)
-        pyperclip.copy(decrypted_link)
-        print("Destination Url :",decrypted_link)
+        if decrypted_link!=None:
+            pyperclip.copy(decrypted_link)
+            print("Destination Url :",decrypted_link)
