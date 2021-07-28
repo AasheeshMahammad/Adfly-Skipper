@@ -56,10 +56,7 @@ def Decrypt(url=0):
             s=1
     ysmm=temp
     decrypted_url = Algorithm(ysmm)
-    temp=""
-    for i in range(16,len(decrypted_url)-16):
-        temp=temp+decrypted_url[i]
-    decrypted_url=temp
+    decrypted_url=decrypted_url[16:-16]
     return str(decrypted_url)
     
 if __name__=="__main__":    
