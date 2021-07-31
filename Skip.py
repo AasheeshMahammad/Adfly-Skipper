@@ -9,13 +9,7 @@ def Algorithm(data):
         if num % 2 == 0: zeros += data[num]
         else: ones = data[num] + ones
 
-    key = zeros + ones
-    temp=[]
-    for i in key:
-        temp.append(i)
-    #print(key)
-    key=temp
-    #print(key)
+    key = list(zeros + ones)
     i=0
     while i != len(key):
         hlp=0
